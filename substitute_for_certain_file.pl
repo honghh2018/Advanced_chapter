@@ -12,8 +12,6 @@ if(!defined $ARGV[0]){
 
 my $type=&svg2png($ARGV[1]);
 my $achievement=0;
-nghh@hpc03-c-0-11 cover]$ vim
-
 
 
 if($type == 0){
