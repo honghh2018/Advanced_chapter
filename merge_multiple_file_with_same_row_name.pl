@@ -13,7 +13,7 @@ for my $i (0..scalar@ARGV-1){
     next if($.==1);
     chomp $_;
     my @arr=split;
-    $integrate{$arr[0]}[$i]=$arr[1];
+    $integrate{$arr[0]}[$i]=$arr[1];  ##more intelligent than $fa{$var}=['a','b'];
   }
   close IN;
 }
