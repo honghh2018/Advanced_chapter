@@ -4,11 +4,13 @@ use warnings;
 
 my %integrate;
 my $header = "#ID";
-
+$\="\n";
+$,="\t";
 for my $i (0..scalar@ARGV-1){
   $header.="\t$ARGV[$i]";
   open IN,"$ARGV[$i]";
   while(<IN>){
+    next if($.==1);
     chomp $_;
     my @arr=split;
     $integrate{$arr[0]}[$i]=$arr[1];
@@ -16,15 +18,17 @@ for my $i (0..scalar@ARGV-1){
   close IN;
 }
 open O,">merge.list";
-print O $header,"\n";
+print O $header;
 foreach my $gene_id(sort{$a cmp $b}keys %integrate){
   foreach my $i(0..scalar @ARGV-1){
     if(!$integrate{$gene_id}[$i]){
       $integrate{$gene_id}[$i]=0;
     }
   }
-  print O $key,"\t",join("\t",@{$total{$key}}),"\n";
+  print O $key,join("\t",@{$total{$key}});
 close O;
+undef $\;
+undef $,;
 ##merge file like :a1.txt
 gene_1  1780
 gene_2  6920
@@ -48,6 +52,3 @@ gene_8  733
 gene_9  660
 gene_10 578
 USAGE:perl $0 a1.txt a2.txt
-
-
-
