@@ -17,3 +17,6 @@ print $var3;  #Hello,this is VAR 3
 my $a="helloworld";
 my $b=\$a;
 
+note:
+use strict 'refs';  it was informed that perl interpretation no allowing to use symbolic reference 
+
