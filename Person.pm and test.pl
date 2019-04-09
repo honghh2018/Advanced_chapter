@@ -28,7 +28,7 @@ sub new {
 
 
 sub sleep{
-	my ($selfish,$time)=@_;
+	my ($selfish,$time)=@_;  #$selfish same as C++ this pointer
 	#debug information followed below
 	if(my $type=ref $selfish){
 		print "time reference type: "."$type"."\n"; #objective of Person
