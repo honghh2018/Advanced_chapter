@@ -1,0 +1,24 @@
+$perl -e 'print(join('\n',@INC))' && cd /usr/share/perl5
+
+$vim PerlBaseFunc.pm
+#!/usr/bin/perl -w
+package PerlBaseFunc;
+require Exporter;
+use strict;
+use warnings;
+our @ISA = qw(Exporter);
+our @EXPORT = qw(readconfig);
+
+our $VERSION = '0.01';
+
+
+sub readconfig(){
+    
+}
+
+1;
+################
+use PerlBaseFunc;
+
+
+
