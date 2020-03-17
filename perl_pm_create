@@ -4,6 +4,7 @@ $vim PerlBaseFunc.pm
 #!/usr/bin/perl -w
 package PerlBaseFunc;
 require Exporter;
+use Cwd qw(abs_path); ###need qw
 use strict;
 use warnings;
 our @ISA = qw(Exporter);
@@ -12,9 +13,21 @@ our @EXPORT = qw(readconfig);
 our $VERSION = '0.01';
 
 
-sub readconfig(){
-    
+sub readconfig{
+   my ($path) = @_; ##must be @_
+   my $abs_path = abs_path($path);
+   my %soft = ();
+   open(IN,"<$abs_path") or die $!;
+   while(<IN>){
+     chomp;
+     next  if(/\#|^$/); ##must one line
+     my @temp = split /\s+/;
+     $soft{$temp[0]} = $temp[1];
+   }
+   close(IN);
+   return(%soft); 
 }
+
 
 1;
 ################
