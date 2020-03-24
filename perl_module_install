@@ -40,7 +40,7 @@ install HTML::Entities
 
 
 ############set perl module path
-vim addmodulepath.pl
+vim addmodulepath.pl ###for temporary setting
 #!/usr/bin/perl -w
 
 push(@INC,"/home/test");
