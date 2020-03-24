@@ -35,7 +35,7 @@ install CGI
 #
 Failed during this command:
 LEEJO/CGI-4.46.tar.gz                        : make_test NO one dependency not OK (HTML::Entities)
-#安装依赖
+#setup independency
 install HTML::Entities
 
 
@@ -78,5 +78,5 @@ use lib '/home/honghh/miniconda3/envs/cellassign/lib/site_perl/5.26.2/';
 /home/honghh/miniconda3/envs/cellassign/lib/site_perl/5.26.2/
 ################interproscan
 ./iprscan -cli -h  ###check info
-################运行
+################run 
 cd bin; ./iprscan -cli -i ../test.seq -iprlookup -goterms
