@@ -1,0 +1,20 @@
+/home/honghh/miniconda3/envs/cellassign/bin/perl
+/home/honghh/perl5/lib/perl5/x86_64-linux-thread-multi/perllocal.pod
+###perl module path
+/home/honghh/miniconda3/envs/cellassign/lib/site_perl/5.26.2/
+$perl -MCPAN -e shell
+cpan[1]>  install  module_name
+Can't locate CGI.pm in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at /share/nas1/Data/Users/honghh/Software/interproscan/data/iprscan/bin/iprscan line 46.
+如：CGI.pm
+install CGI  
+#
+Failed during this command:
+LEEJO/CGI-4.46.tar.gz                        : make_test NO one dependency not OK (HTML::Entities)
+#install independency 
+install HTML::Entities
+
+
+############setting perl module path using script
+vim addmodulepath.pl
+#!/usr/bin/perl -w
+push(@INC,"/home/test");
